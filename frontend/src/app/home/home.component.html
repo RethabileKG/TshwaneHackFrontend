@@ -1,0 +1,48 @@
+<!-- Facility List (Cards) -->
+<div class="facility-container">
+    <div
+      class="facility-card"
+      *ngFor="let facility of facilities"
+      (click)="openModal(facility)"
+    >
+      <img [src]="facility.imageURL" alt="{{ facility.name }}" class="facility-img" />
+      <div class="facility-info">
+        <h3>{{ facility.name }}</h3>
+        <p>{{ facility.type }}</p>
+        <div class="facility-rating">
+          <!-- Display rating stars -->
+          <span *ngFor="let star of getRatingStars(facility.rating)">
+            ★
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Facility Details -->
+  <div *ngIf="selectedFacility" class="modal" [class.show]="modalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>{{ selectedFacility.name }}</h2>
+      <img [src]="selectedFacility.imageURL" alt="{{ selectedFacility.name }}" class="modal-img" />
+      <p>{{ selectedFacility.description }}</p>
+      <p>Price per Hour: {{ selectedFacility.pricePerHour | currency }}</p>
+      <p>Capacity: {{ selectedFacility.capacity }}</p>
+      <p>Address: {{ selectedFacility.address }}</p>
+  
+      <!-- Facility Ratings and Comments -->
+      <div *ngIf="selectedFacility.ratings?.length">
+        <h3>User Ratings:</h3>
+        <div *ngFor="let rating of selectedFacility.ratings.slice(0, 2)">
+          <p><strong>{{ rating.userId }}</strong>: {{ rating.stars }} ★</p>
+          <p>{{ rating.comments }}</p>
+        </div>
+  
+        <!-- Show "more" if there are more than 2 comments -->
+        <a *ngIf="selectedFacility.ratings.length > 2" (click)="viewAllComments()">
+          +{{ selectedFacility.ratings.length - 2 }} more comments
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,29 @@
+<app-loading *ngIf="isLoading"></app-loading> <!-- Spinner is shown while isLoading is true -->
+
+<div class="login-container" [ngClass]="{ 'blurred': isLoading }"> <!-- Add blur effect during loading -->
+  <div class="avatar-container">
+    <!-- <img src="assets/avatar.png" alt="User Avatar" class="avatar"> -->
+  </div>
+  <div class="login-box">
+    <div class="tabs">
+      <button class="active">Login</button>
+      <button>Sign Up</button>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" formControlName="email" placeholder="Username or Email" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" required>
+      </div>
+      <div class="remember-me">
+        <input type="checkbox" id="showPasswordCheckbox" (change)="togglePasswordVisibility($event)">
+        <label for="showPasswordCheckbox">Show Password</label>
+      </div>
+      <button type="submit" [disabled]="isLoading">Login</button>
+    </form>
+    <a routerLink="/forgotpassword" class="forgot-password">Forgot Your Password?</a>
+  </div>
+</div>

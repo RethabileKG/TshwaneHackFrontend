@@ -1,0 +1,20 @@
+.app-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .with-sidebar {
+    .main-content {
+      margin-left: 280px; // This should match the sidebar width
+    }
+  
+    .main-content.sidebar-collapsed {
+      margin-left: 80px; // This should match the collapsed sidebar width
+    }
+  }
