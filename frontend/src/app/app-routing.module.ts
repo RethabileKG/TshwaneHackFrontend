@@ -10,6 +10,7 @@ import { BookingComponent } from './booking/booking.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { ContactComponent } from './contact/contact.component';
 import { FacilityComponent } from './facility/facility.component';
+import { AddFacilityComponent } from './add-facility/add-facility.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'facility', component: FacilityComponent },
 {path: 'booking', component: BookingComponent},
+{path: 'addfacility', component: AddFacilityComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
 ];

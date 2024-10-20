@@ -8,7 +8,7 @@ import { Facility } from '../modals/Facility';
   providedIn: 'root'
 })
 export class FacilityService {
-  private apiUrl = 'https://localhost:7066/api/Facility';  // Replace with your actual API URL
+  private apiUrl = 'https://localhost:7049/api/Facility';  // Replace with your actual API URL
 
   constructor(private http: HttpClient) {}
 
@@ -21,4 +21,8 @@ export class FacilityService {
   getFacilityById(id: number): Observable<Facility> {
     return this.http.get<Facility>(`${this.apiUrl}/${id}`);
   }
+
+  createFacility(facility: FormData): Observable<any> {
+    return this.http.post(`${this.apiUrl}`, facility);
+}
 }

@@ -1,0 +1,73 @@
+.facility-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .facility-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .facility-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .facility-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .facility-details {
+    margin-top: 15px;
+  }
+  
+  .facility-details h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .facility-type {
+    color: #4caf50;  /* Green color for type */
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .facility-description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .facility-address {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .facility-info {
+    margin-top: 15px;
+  }
+  
+  .facility-info p {
+    margin: 5px 0;
+  }
+  
+  .available {
+    color: #4caf50;  /* Green for available */
+    font-weight: bold;
+  }
+  
+  .not-available {
+    color: #f44336;  /* Red for not available */
+    font-weight: bold;
+  }
+  

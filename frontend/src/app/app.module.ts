@@ -39,6 +39,7 @@ import { ServicesComponent } from './services/services.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { AddFacilityComponent } from './add-facility/add-facility.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AboutComponent } from './about/about.component';
     RewardsComponent,
     ContactComponent,
     AboutComponent,
+    AddFacilityComponent,
   ],
   imports: [
     BrowserModule,
