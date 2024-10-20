@@ -61,9 +61,9 @@ export class LoginComponent implements OnInit {
         // Determine the user's role and navigate to the appropriate page
         const userRole = this.authService.getUserRole();
         if (userRole === 'Admin') {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/booking']);
         } else {
-          this.router.navigate(['/register']);
+          this.router.navigate(['/booking']);
         }
       },
       error => {

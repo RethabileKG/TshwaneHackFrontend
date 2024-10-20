@@ -21,6 +21,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LoadingComponent } from './loading/loading.component';
 import { HomeComponent } from './home/home.component';
+import { BookingComponent } from './booking/booking.component';
+import { PaymentReturnComponent } from './payment-return/payment-return.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HomeComponent } from './home/home.component';
     ErrorDialogComponent,
     ConfirmationDialogComponent,
     LoadingComponent,
-    HomeComponent
+    HomeComponent,
+    BookingComponent,
+    PaymentReturnComponent
   ],
   imports: [
     BrowserModule,

@@ -7,8 +7,8 @@ import {jwtDecode}from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private baseUrl = 'https://localhost:7049/api/Authentication';
-  private apiUrl = 'https://localhost:7049/api/UserManagement';
+  private baseUrl = 'https://localhost:7066/api/Authentication';
+  private apiUrl = 'https://localhost:7066/api/UserManagement';
   private userId: string | null = null;  // Class property to store userId
   private userRole: string | null = null; // Class property to store userRole
 
@@ -47,6 +47,10 @@ export class AuthenticationService {
 
     console.log('Retrieved UserID:', this.userId); // Console log to verify userId
     return this.userId;
+  }
+
+  isAuthenticated(): boolean {
+    return !!this.getUserId();
   }
 
   getUserRole(): string | null {
