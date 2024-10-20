@@ -8,7 +8,7 @@ import { Facility } from '../modals/Facility';
   providedIn: 'root'
 })
 export class FacilityService {
-  private apiUrl = 'https://localhost:7049/api/Facility';  // Replace with your actual API URL
+  private apiUrl = 'https://localhost:7066/api/Facility';  // Replace with your actual API URL
 
   constructor(private http: HttpClient) {}
 

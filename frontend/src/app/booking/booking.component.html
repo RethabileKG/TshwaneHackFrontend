@@ -1,0 +1,79 @@
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="facilityId">Facility:</label>
+      <select formControlName="facilityId" id="facilityId" (change)="loadFacilityDetails($event)">
+        <option value="">Select a facility</option>
+        <option *ngFor="let facility of facilities" [value]="facility.facilityId">
+          {{facility.name}}
+        </option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="bookingDate">Date:</label>
+      <input type="date" formControlName="bookingDate" id="bookingDate">
+    </div>
+  
+    <div>
+      <label for="startTime">Start Time:</label>
+      <input type="time" formControlName="startTime" id="startTime">
+    </div>
+  
+    <div>
+      <label for="endTime">End Time:</label>
+      <input type="time" formControlName="endTime" id="endTime">
+    </div>
+  
+    <div formArrayName="attendees">
+      <h3>Attendees</h3>
+      <button type="button" (click)="addAttendee()">Add Attendee</button>
+  
+      <div *ngFor="let attendee of attendees.controls; let i = index">
+        <div [formGroupName]="i">
+          <div>
+            <label for="name-{{i}}">Name:</label>
+            <input type="text" formControlName="name" id="name-{{i}}" required>
+          </div>
+  
+          <div>
+            <label for="email-{{i}}">Email:</label>
+            <input type="email" formControlName="email" id="email-{{i}}" required>
+          </div>
+  
+          <div>
+            <label for="phoneNumber-{{i}}">Phone Number:</label>
+            <input type="tel" formControlName="phoneNumber" id="phoneNumber-{{i}}" required>
+          </div>
+  
+          <div>
+            <label for="type-{{i}}">Type:</label>
+            <select formControlName="type" id="type-{{i}}">
+              <option value="Adult">Adult</option>
+              <option value="Child">Child</option>
+              <option value="Teenager">Teenager</option>
+              <option value="Student">Student</option>
+              <option value="Pensioner">Pensioner</option>
+            </select>
+          </div>
+  
+          <div>
+            <label for="age-{{i}}">Age:</label>
+            <input type="number" formControlName="age" id="age-{{i}}" min="0" max="120">
+          </div>
+  
+          <button type="button" (click)="removeAttendee(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!bookingForm.valid">Book Now</button>
+  
+    <div *ngIf="paymentUrl">
+      <p>Please complete your payment to confirm the booking:</p>
+      <a [href]="paymentUrl" target="_blank">Proceed to Payment</a>
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      {{errorMessage}}
+    </div>
+  </form>

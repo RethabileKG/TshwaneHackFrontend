@@ -31,6 +31,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LoadingComponent } from './loading/loading.component';
 import { HomeComponent } from './home/home.component';
+import { BookingComponent } from './booking/booking.component';
+import { PaymentReturnComponent } from './payment-return/payment-return.component';
 import { FacilityComponent } from './facility/facility.component';
 import { HeaderComponent } from './header/header.component';
 import { ServicesComponent } from './services/services.component';
@@ -51,6 +53,8 @@ import { AboutComponent } from './about/about.component';
     ConfirmationDialogComponent,
     LoadingComponent,
     HomeComponent,
+    BookingComponent,
+    PaymentReturnComponent,
     FacilityComponent,
     HeaderComponent,
     ServicesComponent,
