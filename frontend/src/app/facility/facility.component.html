@@ -1,0 +1,11 @@
+<div class="facility-carousel">
+    <div *ngFor="let facility of facilities; let i = index"
+         class="facility-container"
+         [ngClass]="{'highlighted': i === selectedFacilityIndex, 'side-facility': i !== selectedFacilityIndex}"
+         (click)="changeSelectedFacility(i)">
+      <div class="facility-image" [style.backgroundImage]="'url(' + facility.imageURL + ')'"></div>
+      <h2>{{ facility.name }}</h2>
+      <p>{{ facility.description }}</p>
+    </div>
+  </div>
+  

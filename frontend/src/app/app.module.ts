@@ -2,6 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
 import { FullCalendarModule } from '@fullcalendar/angular'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +31,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LoadingComponent } from './loading/loading.component';
 import { HomeComponent } from './home/home.component';
+import { FacilityComponent } from './facility/facility.component';
+import { HeaderComponent } from './header/header.component';
+import { ServicesComponent } from './services/services.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +50,13 @@ import { HomeComponent } from './home/home.component';
     ErrorDialogComponent,
     ConfirmationDialogComponent,
     LoadingComponent,
-    HomeComponent
+    HomeComponent,
+    FacilityComponent,
+    HeaderComponent,
+    ServicesComponent,
+    RewardsComponent,
+    ContactComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +66,17 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     FullCalendarModule,
     MatPaginatorModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

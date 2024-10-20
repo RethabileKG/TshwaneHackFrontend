@@ -11,7 +11,7 @@ import { DialogService } from '../../Dialogs/dialog.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
-  showPassword: boolean = false;
+  showPassword: boolean = false; 
 
   constructor(
     private fb: FormBuilder,

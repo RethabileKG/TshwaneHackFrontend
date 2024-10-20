@@ -7,7 +7,7 @@
   <div class="login-box">
     <div class="tabs">
       <button class="active">Login</button>
-      <button>Sign Up</button>
+      <button (click)="navigateToRegister()">Sign Up</button> <!-- Trigger navigation on click -->
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="input-group">
