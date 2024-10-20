@@ -1,0 +1,57 @@
+<div class="facility-form-container">
+    <h2>Add New Facility</h2>
+    <form [formGroup]="facilityForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Facility Name -->
+      <div>
+        <label for="name">Facility Name</label>
+        <input id="name" formControlName="name" type="text" placeholder="Enter facility name" />
+      </div>
+  
+      <!-- Description -->
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" placeholder="Enter facility description"></textarea>
+      </div>
+  
+      <!-- Type -->
+      <div>
+        <label for="type">Type</label>
+        <input id="type" formControlName="type" type="text" placeholder="Enter facility type" />
+      </div>
+  
+      <!-- Price Per Hour -->
+      <div>
+        <label for="pricePerHour">Price Per Hour</label>
+        <input id="pricePerHour" formControlName="pricePerHour" type="number" placeholder="Enter price per hour" />
+      </div>
+  
+      <!-- Capacity -->
+      <div>
+        <label for="capacity">Capacity</label>
+        <input id="capacity" formControlName="capacity" type="number" placeholder="Enter capacity" />
+      </div>
+  
+      <!-- Address -->
+      <div>
+        <label for="address">Address</label>
+        <input id="address" formControlName="address" type="text" placeholder="Enter facility address" />
+      </div>
+  
+      <!-- Image Upload -->
+      <div>
+        <label for="image">Select Image</label>
+        <input id="image" type="file" (change)="onImageSelected($event)" accept="image/*" />
+      </div>
+  
+      <!-- Image preview -->
+      <div *ngIf="imagePreview">
+        <h4>Image Preview</h4>
+        <img [src]="imagePreview" alt="Preview" style="max-width: 100%; height: auto;" />
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="facilityForm.invalid">Add Facility</button>
+    </form>
+  </div>
+  

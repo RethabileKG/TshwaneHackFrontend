@@ -1,0 +1,46 @@
+.facility-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    color: #333; /* Darker text color */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  
+    div {
+      margin-bottom: 15px;
+    }
+  
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333; /* Label color */
+    }
+  
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: white; /* Ensure input background is white */
+      color: #333; /* Darker text color */
+    }
+  
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:disabled {
+      background-color: #cccccc;
+    }
+  }
+  

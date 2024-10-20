@@ -1,20 +1,79 @@
-.app-container {
-    display: flex;
-    min-height: 100vh;
+/* Toolbar Styles */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  background-color: #4caf50; /* Green background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* White text */
   }
+}
+
+/* Spacer to push elements apart */
+.spacer {
+  flex: 1;
+}
+
+/* Login Button Styles */
+.login-btn {
+  margin-right: 16px;
+  color: #fff; /* White text */
+  font-weight: 500;
+}
+
+/* Get Started Button Styles */
+.get-started-btn {
+  font-weight: 600;
+  background-color: #fff; /* White background for contrast */
+  color: #4caf50; /* Green text */
+  padding: 8px 16px;
+  border-radius: 4px;
   
-  .main-content {
-    flex: 1;
-    padding: 20px;
-    transition: margin-left 0.3s ease;
+  &:hover {
+    background-color: #e8f5e9; /* Light green background on hover */
   }
-  
-  .with-sidebar {
-    .main-content {
-      margin-left: 280px; // This should match the sidebar width
+}
+
+/* Sidenav Container Styles */
+.sidenav-container {
+  height: 100vh;
+  background-color: #fafafa; /* Light background */
+}
+
+/* Sidenav Styles */
+.sidenav {
+  width: 250px;
+  background-color: #4caf50; /* Green background */
+  padding: 8px;
+  color: #fff; /* White text */
+
+  mat-nav-list a {
+    font-size: 1.2rem;
+    color: #fff; /* White text */
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      color: #c8e6c9; /* Lighter green on hover */
     }
-  
-    .main-content.sidebar-collapsed {
-      margin-left: 80px; // This should match the collapsed sidebar width
-    }
   }
+}
+
+/* Close Button Styling */
+.close-button {
+  display: block;
+  margin-left: auto;
+  color: #fff; /* White icon */
+}
+
+/* Optional: Active Link Styling */
+mat-list-item.active {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle highlight */
+}

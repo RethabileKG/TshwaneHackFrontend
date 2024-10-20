@@ -3,19 +3,12 @@
     justify-content: center;
     align-items: center;
     background-color: #f0f2f5;
-    height: 100vh; // Ensure full height
+    height: 100vh;
+    transition: filter 0.3s ease-in-out;
   
-    .avatar-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 20px;
-      img.avatar {
-        border-radius: 50%;
-        width: 100px;
-        border: 4px solid #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+    &.blurred {
+      filter: blur(5px);
+      pointer-events: none; // Prevent clicking while blurred
     }
   
     .login-box {
@@ -28,26 +21,19 @@
   
       .tabs {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         margin-bottom: 20px;
   
         button {
+          background-color: transparent;
           border: none;
-          background: none;
-          padding: 10px 20px;
           font-size: 16px;
+          color: #757575;
           cursor: pointer;
-          color: #81c784;
-          border-bottom: 2px solid transparent;
-          transition: border-color 0.3s ease;
-  
-          &:hover {
-            border-bottom: 2px solid #66bb6a;
-          }
   
           &.active {
+            color: #81c784;
             border-bottom: 2px solid #81c784;
-            font-weight: bold;
           }
         }
       }
@@ -87,15 +73,11 @@
         .remember-me {
           display: flex;
           align-items: center;
-          font-size: 14px;
-          margin-bottom: 20px;
-  
-          input {
-            margin-right: 10px;
-          }
+          margin-bottom: 15px;
   
           label {
-            color: #666;
+            margin-left: 10px;
+            color: #757575;
           }
         }
   
@@ -115,26 +97,21 @@
   
           &:disabled {
             background-color: #bdbdbd;
-          }
-        }
-  
-        .forgot-password {
-          display: block;
-          margin-top: 15px;
-          color: #81c784;
-          text-decoration: none;
-          font-size: 14px;
-  
-          &:hover {
-            text-decoration: underline;
+            cursor: not-allowed;
           }
         }
       }
+  
+      .forgot-password {
+        margin-top: 20px;
+        display: block;
+        color: #81c784;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
-  }
-
-  .blurred {
-    filter: blur(5px);
-    pointer-events: none; // Prevent clicking while blurred
   }
   

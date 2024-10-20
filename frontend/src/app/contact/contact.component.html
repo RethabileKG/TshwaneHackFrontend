@@ -1,0 +1,41 @@
+<div class="contact-container">
+    <h1>Contact Us</h1>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- Name Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Your Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter your name" />
+        <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Email Input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" />
+        <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="contactForm.controls['email'].hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Message Text Area -->
+      <mat-form-field appearance="fill">
+        <mat-label>Your Message</mat-label>
+        <textarea matInput formControlName="message" placeholder="Write your message here"></textarea>
+        <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
+          Message is required
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Submit Button -->
+      <button mat-raised-button type="submit" [disabled]="!contactForm.valid">
+        Send Message
+      </button>
+    </form>
+  </div>
+  

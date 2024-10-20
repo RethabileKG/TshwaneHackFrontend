@@ -1,0 +1,31 @@
+<div class="facility-carousel">
+  <div *ngFor="let facility of facilities; let i = index"
+       class="facility-card"
+       [ngClass]="{'highlighted': i === selectedFacilityIndex}"
+       (click)="changeSelectedFacility(i)">
+    
+    <div class="facility-image" *ngIf="facility.imageURL" 
+         [style.backgroundImage]="'url(' + facility.imageURL + ')'">
+    </div>
+
+    <div class="facility-details">
+      <h2>{{ facility.name }}</h2>
+      <p class="facility-type">{{ facility.type }}</p>
+      <p class="facility-description">{{ facility.description }}</p>
+      <p class="facility-address"><strong>Address:</strong> {{ facility.address }}</p>
+      
+      <div class="facility-info">
+        <p *ngIf="facility.isNoCostFacility; else paidFacility">Free Facility</p>
+        <ng-template #paidFacility>
+          <p><strong>Price:</strong> ${{ facility.pricePerHour }} per hour</p>
+        </ng-template>
+        <p><strong>Capacity:</strong> {{ facility.capacity }} people</p>
+        <p><strong>Status:</strong> 
+          <span [ngClass]="{'available': facility.isAvailable, 'not-available': !facility.isAvailable}">
+            {{ facility.isAvailable ? 'Available' : 'Not Available' }}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
