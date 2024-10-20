@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'reward', component: RewardsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'facility', component: FacilityComponent },
+{path: 'booking', component: BookingComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
 ];
