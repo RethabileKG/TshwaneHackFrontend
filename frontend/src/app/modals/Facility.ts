@@ -1,3 +1,5 @@
+//Facility.ts
+
 export interface Facility {
     facilityId: number;
     name: string;

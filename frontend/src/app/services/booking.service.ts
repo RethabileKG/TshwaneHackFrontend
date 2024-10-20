@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AuthenticationService } from '../Account/authentication.service';
@@ -10,7 +10,7 @@ import { BookingRequestDto, BookingResponseDto } from '../booking.types';
   providedIn: 'root'
 })
 export class BookingService {
-  private apiUrl = 'https://localhost:7066/api/';; // Adjust this to match your API endpoint
+  private apiUrl = 'https://localhost:7066/api'; // Removed trailing slash
 
   constructor(
     private http: HttpClient,
@@ -18,8 +18,12 @@ export class BookingService {
   ) {}
 
   createBooking(bookingRequest: BookingRequestDto): Observable<BookingResponseDto> {
-    return this.http.post<BookingResponseDto>(`${this.apiUrl}/booking/book`, bookingRequest);
-}
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    console.log('Sending booking request:', JSON.stringify(bookingRequest, null, 2));
+    return this.http.post<BookingResponseDto>(`${this.apiUrl}/booking/book`, bookingRequest, { headers })
+      .pipe(catchError(this.handleError));
+  }
+
 
   getAllBookings(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/booking/all`).pipe(
