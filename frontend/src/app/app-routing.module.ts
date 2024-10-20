@@ -5,7 +5,7 @@ import { LoginComponent } from './Account/login/login.component';
 import { ForgotPasswordComponent } from './Account/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Account/reset-password/reset-password.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+ import { AboutComponent } from './about/about.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { ContactComponent } from './contact/contact.component';
 import { FacilityComponent } from './facility/facility.component';
